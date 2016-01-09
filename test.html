@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <title></title>
+    <style>
+        #content {
+            max-width: 200px;
+            margin:auto;
+        }
+        button {
+            margin:0 400px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="msg">
+<button id="btn">测试</button>
+<button id="btn2">测试</button>
+<div id="content"></div>
+<script language="javascript" type="text/javascript" src="../../jquery/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../../bootstrap/js/bootstrap.js"></script>
+<script>
+    $("#btn").click(function() {
+        var msg = $("#msg").val();
+        $("#content").append("<div class='pull-right well'>"+ msg +"</div><div class='clearfix'></div>");
+    });
+    $("#btn2").click(function() {
+        var msg = $("#msg").val();
+        $("#content").append("<div class='pull-left well'>"+msg+"</div><div class='clearfix'></div>");
+    });
+</script>
+</body>
+</html>

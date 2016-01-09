@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <style rel="stylesheet">
+        .window {
+            max-width: 800px;
+            margin: 100px auto;
+        }
+
+        .titleBar {
+            text-align: center;
+        }
+
+        .copyright {
+            text-align: right;
+        }
+
+        .menu {
+            max-width: 200px;
+            text-align: center;
+            margin: 0 !important;
+        }
+
+        .user-group {
+            color: black !important;
+        }
+
+        .user-group:link {
+            text-decoration: none !important;
+            color: black;
+        }
+
+        .menu-item {
+            margin: 0 !important;
+        }
+
+        .main-content {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .dialog {
+            height: 300px;
+            overflow-y:auto;
+            padding: 0 50px;
+        }
+
+        .border {
+            border: 1px #DDD solid !important;
+        }
+
+        .operate {
+            width: 500px !important;
+        }
+
+        .dialogBox {
+            float: right !important;
+            max-width: 500px;
+        }
+
+        .bg-gay {
+        / / background-color : #CFD6C7;
+        }
+
+    </style>
+    <title>聊天软件</title>
+</head>
+<body>
+<div class="panel panel-default window">
+    <div class="panel-heading">
+        <h3 class="panel-title titleBar">心聊</h3>
+    </div>
+    <div class="panel-body main-content">
+        <div class="container">
+            <div class="row">
+                <div class="panel-group col-sm-2" id="menu-bar">
+                    <div class="panel panel-default menu-item">
+                        <div class="panel-heading">
+                            <a href="#content" class="panel-title btn-block user-group" data-parent="#menu-bar"
+                               data-toggle="collapse">
+                                <div>用户组</div>
+                            </a>
+                        </div>
+                        <div id="content" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                好友
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default menu-item">
+                        <div class="panel-heading">
+                            <a href="#content2" class="panel-title btn-block user-group" data-parent="#menu-bar"
+                               data-toggle="collapse">
+                                <div>用户组</div>
+                            </a>
+                        </div>
+                        <div id="content2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                好友
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-6 border">
+                    <div class="dialog" data-spy="scroll" id="dialogBox">
+                    </div>
+                    <hr/>
+                    <div class="input-group operate">
+                        <textarea class="form-control" id="msg"></textarea>
+                        <input type="button" class="form-control" value="发送" id="send">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel-footer copyright">
+        版权所有&copy; 2015-
+        <script>document.write(new Date().getFullYear().toString());</script>
+        SirMin
+    </div>
+</div>
+<script language="javascript" type="text/javascript" src="../../jquery/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../../bootstrap/js/bootstrap.js"></script>
+<script>
+    var showMsgHead = '<span class="pull-right well">';
+    var showMsgFooter = '</span><div class="clearfix"></div>';
+    $('#send').on("click", function() {
+//        console.dir($())
+        var msg = $('#msg').val();
+        if(msg == undefined || msg == "") return;
+        $('#dialogBox').append(showMsgHead + msg + showMsgFooter);
+        $('#msg').val('');
+    });
+</script>
+</body>
+</html>
